@@ -57,11 +57,12 @@
                     <img style="height:100px;width:100px;" src="{{ asset('/images/backend_images/products/small/'.$product->image )}}">
                     @endif
                   </td>
-                  <td class="center"> 
-                    <a href="#myModal{{$product->id}}" data-toggle="modal" class="btn btn-success btn-mini-center">View</a>
-                    <a href="{{url ('/admin/edit-product/'.$product->id) }}" class="btn btn-primary btn-mini-center">Edit</a>
-                    <a href="{{url ('/admin/add-attribute/'.$product->id) }}" class="btn btn-primary btn-mini-center">Add</a>
-                    <a rel="{{ $product->id }}" rel1="delete_product" class="btn btn-danger btn-mini-deleteRecord" href="{{url ('/admin/delete-product/'.$product->id) }}" >Delete</a>
+                  <td class="center" style="display:inline"> 
+                    <a href="#myModal{{$product->id}}" data-toggle="modal" class="btn btn-success btn-mini-center" title="View Product">View</a>
+                    <a href="{{url ('/admin/edit-product/'.$product->id) }}" class="btn btn-primary btn-mini-center" title="Edit Product">Edit</a>
+                    <a href="{{url ('/admin/add-attribute/'.$product->id) }}" class="btn btn-info btn-mini-center" title="Add Attribute">Add</a>
+                    <a href="{{url ('/admin/add-images/'.$product->id) }}" class="btn btn-info btn-mini-center" title="Add Images">Add</a>
+                    <a rel="{{$product->id}}" rel1="delete-product" href="javascript:" class="btn btn-danger btn-mini-center deleteRecord " title="Delete Attribute">Delete</a>
                   </td>
                 </tr>
 

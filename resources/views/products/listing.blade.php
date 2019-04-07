@@ -70,32 +70,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3">
-					<div class="left-sidebar">
-						<h2>Category</h2>
-						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							<div class="panel panel-default">
-								@foreach($categories as $cat)
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordian" href="#{{$cat->id}}">
-												<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-												{{ $cat->name}}
-											</a>
-										</h4>
-									</div>
-									<div id="{{$cat->id}}" class="panel-collapse collapse">
-										<div class="panel-body">
-											<ul>
-												@foreach($cat->categories as $subcat)
-													<li><a href="{{ $subcat->url }} ">{{ $subcat->name }} </a></li>
-												@endforeach
-											</ul>
-										</div>
-									</div>
-								@endforeach
-							</div>
-						</div><!--/category-products-->
-					</div>
+					@include('layouts.frontlayout.front_sidebar')
 				</div>
 				
 				<div class="col-sm-9 padding-right">
@@ -116,7 +91,7 @@
 											<div class="overlay-content">
 												<h2>NPR{{ $product->price }}</h2>
 											    <p>{{ $product->product_name }}</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												<a href="{{url('product/'.$product->id)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 										</div>
 								</div>
